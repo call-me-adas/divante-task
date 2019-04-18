@@ -1,0 +1,28 @@
+@import "../../../assets/styles/variables";
+
+.container {
+  color: $white;
+  width: 262px;
+  background-color: $light-blue;
+  padding: 1em;
+
+  .header {
+    font-size: 16px;
+  }
+  .cart {
+    border: 1px dashed #FFFFFF;
+    font-size: 14px;
+
+    .cart-list {
+      .cart-list-wrapper {
+        background-color: $dark-blue;
+      }
+    }
+    .cart-empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+

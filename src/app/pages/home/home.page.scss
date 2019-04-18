@@ -1,0 +1,15 @@
+@import "../../../assets/styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  .header {
+    height: 40px;
+    border-bottom: 1px solid $light-text;
+    padding: 10px;
+  }
+  .wrapper {
+    height: 100%;
+  }
+}

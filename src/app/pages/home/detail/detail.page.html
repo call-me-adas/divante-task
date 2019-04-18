@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="cart-menu">
+    <app-cart></app-cart>
+  </div>
+  <div class="item-details">
+    <img class="image" [src]="(detail$ | async)?.image" />
+    <div class="title">{{(detail$ | async)?.title}}</div>
+    <div class="details-container">
+      <div class="description">{{(detail$ | async)?.description}}</div>
+      <div class="button" (click)="addToCart((detail$ | async)?.id)">Add to Cart</div>
+    </div>
+  </div>
+</div>

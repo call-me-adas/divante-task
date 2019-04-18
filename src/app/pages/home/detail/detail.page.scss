@@ -1,0 +1,20 @@
+@import "../../../../assets/styles/variables";
+
+.container {
+  .cart-menu {
+    width: 262px;
+  }
+
+  .item-details {
+    background: $dark-blue;
+
+    .details-container {
+      display: flex;
+      justify-content: space-between;
+      .button {
+        font-size: 18px;
+        background-color: $accent;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="cart-menu">
+    <app-cart></app-cart>
+  </div>
+  <div class="item-container" *ngFor="let item of items$ | async">
+    <img class="image" [src]="item.image"  />
+    <div class="title">{{item.title}}</div>
+    <div class="description">{{item.description}}</div>
+  </div>
+</div>

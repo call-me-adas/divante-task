@@ -1,0 +1,23 @@
+@import "../../../../assets/styles/variables";
+
+.container {
+  display: flex;
+  .cart-menu {
+    width: 262px;
+  }
+  .item-container {
+    margin: 16px;
+    .image {
+      width: 216px;
+      height: 216px;
+    }
+    .title {
+      color: $dark-text;
+      font-size: 18px;
+    }
+    .description {
+      color: $light-text;
+      font-size: 12px;
+    }
+  }
+}
