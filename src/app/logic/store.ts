@@ -17,6 +17,7 @@ export const getListState = createFeatureSelector<AppState>('list');
 export const getCartState = createFeatureSelector<AppState>('cart');
 
 /* List */
+export const getloading = createSelector(getListState, fromList.getloading);
 export const getList = createSelector(getListState, fromList.getList);
 export const getDetail = createSelector(getListState, fromList.getDetail);
 

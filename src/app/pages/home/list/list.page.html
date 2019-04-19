@@ -3,12 +3,17 @@
     <app-cart></app-cart>
   </div>
   <div class="items-wrapper">
-    <div class="item-container" *ngFor="let item of (list$ | async)">
-      <a [routerLink]="['/detail', item.id]">
-        <img class="image" [src]="item.image" />
-        <div class="title">{{item.title}}</div>
-        <div class="description">{{item.description}}</div>
-      </a>
-    </div>
+    <ng-container *ngIf="!($loading | async); else loading">
+      <div class="item-container" *ngFor="let item of (list$ | async)">
+        <a [routerLink]="['/detail', item.id]">
+          <img class="image" [src]="item.image" />
+          <div class="title">{{item.title}}</div>
+          <div class="description">{{item.description}}</div>
+        </a>
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      <app-loader class="app-loader" [isLoading]="$loading | async" [size]="5"></app-loader>
+    </ng-template>
   </div>
 </div>

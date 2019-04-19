@@ -4,7 +4,7 @@ import {Observable, Subscription} from 'rxjs';
 import {select, Store} from '@ngrx/store';
 import {FetchList} from '@logic/actions/list.action';
 import {ItemModel} from '@logic/models/item.model';
-import {AppState, getList} from '@logic/store';
+import {AppState, getList, getloading} from '@logic/store';
 
 @Component({
     selector: 'page-list',
@@ -15,6 +15,7 @@ import {AppState, getList} from '@logic/store';
 export class ListPage implements OnInit, OnDestroy {
     public parametersObservable: Subscription;
     public list$: Observable<Array<ItemModel>>;
+    public $loading: Observable<boolean>;
 
     constructor(private route: ActivatedRoute, private store: Store<AppState>) {}
 
@@ -23,6 +24,7 @@ export class ListPage implements OnInit, OnDestroy {
           this.store.dispatch(new FetchList());
 
           this.list$ = this.store.pipe(select(getList));
+          this.$loading = this.store.pipe(select(getloading));
         });
     }
 

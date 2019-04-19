@@ -11,14 +11,14 @@ import {
   FetchListFail,
   FetchListSuccess
 } from '@logic/actions/list.action';
-import {catchError, mergeMap, flatMap} from 'rxjs/operators';
+import {catchError, mergeMap, flatMap, delay} from 'rxjs/operators';
 import {ItemModel} from "@logic/models/item.model";
 
 @Injectable()
 export class ListEffects {
   @Effect()
   fetchComments$: Observable<Action> = this.actions$
-    .pipe(ofType(FETCH_LIST),
+    .pipe(ofType(FETCH_LIST), delay(1000),
       mergeMap((action: FetchList) => {
         return this.listService.getList()
           .pipe(flatMap((res: Array<ItemModel>) => [
@@ -34,7 +34,7 @@ export class ListEffects {
     .pipe(ofType(FETCH_DETAIL),
       mergeMap((action: FetchDetail) => {
         return this.listService.getList()
-          .pipe(flatMap((res: Array<ItemModel>) => [
+          .pipe( flatMap((res: Array<ItemModel>) => [
               new FetchListSuccess(res),
               new FetchDetailSuccess(action.payload)
             ]),

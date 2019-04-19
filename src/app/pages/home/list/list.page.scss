@@ -23,6 +23,10 @@
     flex-direction: row;
     flex-flow: wrap;
 
+    .app-loader {
+      margin: 0 auto;
+    }
+
     .item-container {
       margin: 0 1em 2em 1em;
       background: #FFFFFF;
