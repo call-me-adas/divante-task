@@ -1,6 +1,5 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {LoaderComponent} from './loader.component';
 import {MaterialModule} from '@shared/material.module';
@@ -11,7 +10,7 @@ describe('CartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, FlexLayoutModule, MaterialModule],
+      imports: [BrowserAnimationsModule, MaterialModule],
       declarations: [LoaderComponent]
     }).compileComponents();
   }));

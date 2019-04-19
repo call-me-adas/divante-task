@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from '@shared/core.module';
 import { SharedModule } from '@shared/shared.module';
-import {ContactPage} from "@pages/home/contact/contact.page";
+import {ContactPage} from '@pages/home/contact/contact.page';
 
 describe('ContactPage', () => {
     let component: ContactPage;

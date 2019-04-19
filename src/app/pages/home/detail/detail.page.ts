@@ -3,9 +3,9 @@ import {ActivatedRoute} from '@angular/router';
 import {Observable, Subscription} from 'rxjs';
 import {select, Store} from '@ngrx/store';
 import {AppState, getDetail} from '@logic/store';
-import {FetchDetail} from "@logic/actions/list.action";
-import {ItemModel} from "@logic/models/item.model";
-import {AddProduct} from "@logic/actions/cart.action";
+import {FetchDetail} from '@logic/actions/list.action';
+import {ItemModel} from '@logic/models/item.model';
+import {AddProduct} from '@logic/actions/cart.action';
 
 @Component({
     selector: 'page-detail',
@@ -15,7 +15,7 @@ import {AddProduct} from "@logic/actions/cart.action";
 
 export class DetailPage implements OnInit, OnDestroy {
     public parametersObservable: Subscription;
-    private detail$: Observable<ItemModel>;
+    public detail$: Observable<ItemModel>;
 
     constructor(private route: ActivatedRoute, private store: Store<AppState>) {
     }

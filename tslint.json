@@ -4,6 +4,13 @@
     "codelyzer"
   ],
   "rules": {
+    "component-selector": [
+      true,
+      "element",
+      "app",
+      "page",
+      "kebab-case"
+    ],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {

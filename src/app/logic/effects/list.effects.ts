@@ -12,7 +12,7 @@ import {
   FetchListSuccess
 } from '@logic/actions/list.action';
 import {catchError, mergeMap, flatMap, delay} from 'rxjs/operators';
-import {ItemModel} from "@logic/models/item.model";
+import {ItemModel} from '@logic/models/item.model';
 
 @Injectable()
 export class ListEffects {

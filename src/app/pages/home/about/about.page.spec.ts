@@ -2,15 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { CoreModule } from '@shared/core.module';
 import { SharedModule } from '@shared/shared.module';
-import { DetailPage } from './article.page';
-import {CommentComponent} from '@pages/home/article/comments.component';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
-import {AboutPage} from "@pages/home/about/about.page";
+import {AboutPage} from '@pages/home/about/about.page';
 
 describe('AboutPage', () => {
     let component: AboutPage;
@@ -25,12 +20,12 @@ describe('AboutPage', () => {
                 ReactiveFormsModule,
                 CoreModule
             ],
-            declarations: [AboutPage, CommentComponent]
+            declarations: [AboutPage]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(DetailPage);
+        fixture = TestBed.createComponent(AboutPage);
         component = fixture.componentInstance;
 
         fixture.detectChanges();

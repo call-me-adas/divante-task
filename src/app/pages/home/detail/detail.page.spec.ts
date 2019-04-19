@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from '@shared/core.module';
 import { SharedModule } from '@shared/shared.module';
-import {DetailPage} from "@pages/home/detail/detail.page";
+import {DetailPage} from '@pages/home/detail/detail.page';
 
 describe('DetailPage', () => {
     let component: DetailPage;

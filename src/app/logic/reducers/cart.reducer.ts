@@ -1,4 +1,4 @@
-import {ADD_PRODUCT} from "@logic/actions/cart.action";
+import {ADD_PRODUCT} from '@logic/actions/cart.action';
 
 export interface State {
   list: Array<any>;

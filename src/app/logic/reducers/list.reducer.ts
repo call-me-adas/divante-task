@@ -5,7 +5,7 @@ import {
   FETCH_LIST_FAIL,
   FETCH_DETAIL_FAIL, FETCH_LIST
 } from '@logic/actions/list.action';
-import {ItemModel} from "@logic/models/item.model";
+import {ItemModel} from '@logic/models/item.model';
 
 export interface State {
     list: Array<ItemModel>;

@@ -1,11 +1,8 @@
-<script
-  src="../../../../../../../Downloads/reddit-api-master/reddit-api-master/src/app/pages/home/home.page.ts"></script>
 <div class="container">
   <div class="logo-container">
     <a [routerLink]="['/home']">LOGO</a>
   </div>
   <div class="actions-container">
-    {{isMobile}}
     <div class="mobile-menu"><mat-icon (click)="expanded = !expanded">menu</mat-icon></div>
     <ng-container *ngIf="expanded">
       <div> <a class="link-wrapper" routerLinkActive="active" [routerLink]="['/home']">Home</a> </div>

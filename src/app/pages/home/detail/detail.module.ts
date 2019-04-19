@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from '@shared/shared.module';
 import {RouterModule} from '@angular/router';
-import {DetailPage} from "@pages/home/detail/detail.page";
+import {DetailPage} from '@pages/home/detail/detail.page';
 
 @NgModule({
     imports: [
