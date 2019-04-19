@@ -1,19 +1,59 @@
 @import "../../../../assets/styles/variables";
 
 .container {
+  display: flex;
+  flex-direction: row;
   .cart-menu {
     width: 262px;
+    margin: 2em 0.75em 2em 0.75em;
   }
 
-  .item-details {
-    background: $dark-blue;
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    .cart-menu {
+      width: 100%;
+    }
+  }
 
-    .details-container {
-      display: flex;
-      justify-content: space-between;
-      .button {
-        font-size: 18px;
-        background-color: $accent;
+  .item-details-wrapper {
+    display: flex;
+    padding: 2em 2.75em 2em 0.75em;
+    .item-details {
+      background: $dark-blue;
+      color: $white;
+      display: inline-flex;
+      flex-direction: column;
+      .image {
+        max-height: 400px;
+        max-width: 800px;
+        margin: 0 auto;
+        height: auto;
+        width: 100%;
+      }
+
+      .description-container {
+        padding: 1em 2em 1em 2em;
+        .title {
+          font-weight: bold;
+          font-size: 18px;
+          margin-bottom: 1em;
+        }
+        .details-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .description {
+            font-family: Lato;
+            font-size: 13px;
+            width: 65%;
+          }
+          .button {
+            cursor: pointer;
+            font-size: 18px;
+            padding: 0.5em 2em 0.5em 2em;
+            background-color: $accent;
+          }
+        }
       }
     }
   }

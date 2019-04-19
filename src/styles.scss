@@ -2,6 +2,10 @@
 @import '/assets/styles/main';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   width: 100vw;

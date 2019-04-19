@@ -19,6 +19,14 @@ export class AddProductSuccess implements Action {
     }
 }
 
+export class AddProductFail implements Action {
+    readonly type = ADD_PRODUCT_FAIL;
+
+    constructor(public payload) {
+    }
+}
+
 export type Actions =
     | AddProduct
+    | AddProductFail
     | AddProductSuccess;

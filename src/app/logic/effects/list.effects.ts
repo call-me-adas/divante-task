@@ -6,7 +6,7 @@ import {Action} from '@ngrx/store';
 import {
   FETCH_DETAIL,
   FETCH_LIST,
-  FetchDetail,
+  FetchDetail, FetchDetailSuccess,
   FetchList,
   FetchListFail,
   FetchListSuccess
@@ -23,6 +23,20 @@ export class ListEffects {
         return this.listService.getList()
           .pipe(flatMap((res: Array<ItemModel>) => [
               new FetchListSuccess(res)
+            ]),
+            catchError((error => of(new FetchListFail(error))))
+          );
+      })
+    );
+
+  @Effect()
+  fetchDetail$: Observable<Action> = this.actions$
+    .pipe(ofType(FETCH_DETAIL),
+      mergeMap((action: FetchDetail) => {
+        return this.listService.getList()
+          .pipe(flatMap((res: Array<ItemModel>) => [
+              new FetchListSuccess(res),
+              new FetchDetailSuccess(action.payload)
             ]),
             catchError((error => of(new FetchListFail(error))))
           );

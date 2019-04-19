@@ -2,6 +2,8 @@ import {Action} from '@ngrx/store';
 import {ItemModel} from '@logic/models/item.model';
 
 export const FETCH_DETAIL = '[List] FETCH_DETAIL';
+export const FETCH_DETAIL_SUCCESS = '[List] FETCH_DETAIL_SUCCESS';
+export const FETCH_DETAIL_FAIL = '[List] FETCH_DETAIL_FAIL';
 
 export const FETCH_LIST = '[List] FETCH_NEWS';
 export const FETCH_LIST_SUCCESS = '[List] FETCH_NEWS_SUCCESS';
@@ -37,8 +39,24 @@ export class FetchDetail implements Action {
 }
 
 
+export class FetchDetailSuccess implements Action {
+  readonly type = FETCH_DETAIL_SUCCESS;
+
+  constructor(public payload: number) {
+  }
+}
+
+export class FetchDetailFail implements Action {
+  readonly type = FETCH_DETAIL_FAIL;
+
+  constructor(public payload) {
+  }
+}
+
 export type Actions =
     | FetchDetail
+    | FetchDetailSuccess
+    | FetchDetailFail
     | FetchList
     | FetchListSuccess
     | FetchListFail;

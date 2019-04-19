@@ -5,6 +5,7 @@ import {select, Store} from '@ngrx/store';
 import {AppState, getDetail} from '@logic/store';
 import {FetchDetail} from "@logic/actions/list.action";
 import {ItemModel} from "@logic/models/item.model";
+import {AddProduct} from "@logic/actions/cart.action";
 
 @Component({
     selector: 'page-detail',
@@ -31,7 +32,7 @@ export class DetailPage implements OnInit, OnDestroy {
         this.parametersObservable.unsubscribe();
     }
 
-    addToCart(val: number) {
-      this.store.dispatch(new FetchDetail(val));
+    addToCart(val: ItemModel) {
+      this.store.dispatch(new AddProduct(val));
     }
 }

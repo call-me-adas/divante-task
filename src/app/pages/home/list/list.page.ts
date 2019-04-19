@@ -14,15 +14,15 @@ import {AppState, getList} from '@logic/store';
 
 export class ListPage implements OnInit, OnDestroy {
     public parametersObservable: Subscription;
-    private list$: Observable<ItemModel>;
+    public list$: Observable<Array<ItemModel>>;
 
     constructor(private route: ActivatedRoute, private store: Store<AppState>) {}
 
     ngOnInit() {
         this.parametersObservable = this.route.params.subscribe(() => {
-            this.store.dispatch(new FetchList());
+          this.store.dispatch(new FetchList());
 
-            this.list$ = this.store.pipe(select(getList));
+          this.list$ = this.store.pipe(select(getList));
         });
     }
 

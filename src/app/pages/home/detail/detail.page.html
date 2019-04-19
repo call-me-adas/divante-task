@@ -2,12 +2,16 @@
   <div class="cart-menu">
     <app-cart></app-cart>
   </div>
-  <div class="item-details">
-    <img class="image" [src]="(detail$ | async)?.image" />
-    <div class="title">{{(detail$ | async)?.title}}</div>
-    <div class="details-container">
-      <div class="description">{{(detail$ | async)?.description}}</div>
-      <div class="button" (click)="addToCart((detail$ | async)?.id)">Add to Cart</div>
+  <div class="item-details-wrapper">
+    <div class="item-details">
+      <img class="image" *ngIf="(detail$ | async)?.image" [src]="(detail$ | async)?.image" />
+      <div class="description-container">
+        <div class="title">{{(detail$ | async)?.title}}</div>
+        <div class="details-container">
+          <div class="description">{{(detail$ | async)?.details}}</div>
+          <div class="button" *ngIf="(detail$ | async) as match" (click)="addToCart(match)">Add to Cart</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

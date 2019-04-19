@@ -1,12 +1,14 @@
 <div class="container">
-  <div class="header"><mat-icon>adress-book</mat-icon> Contact </div>
-  <div> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam purus est, placerat sed ante vel, ultrices congue augue. </div>
-  <div class="header"><mat-icon>cart</mat-icon> Cart (1) </div>
+  <div class="header"><mat-icon class="icon">account_box</mat-icon> <span>Contact</span> </div>
+  <div class="description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam purus est, placerat sed ante vel, ultrices congue augue. </div>
+  <div class="header"><mat-icon class="icon">shopping_cart</mat-icon> Cart ({{(list$ | async)?.length}}) </div>
   <div class="cart">
-    <ng-container *ngIf="(list$ | async).length !== 0;else empty">
+    <ng-container *ngIf="(list$ | async)?.length !== 0;else empty">
       <div class="cart-list">
         <div class="cart-list-wrapper">
-          1 item.description
+          <div *ngFor="let item of (list$ | async)">
+            <span class="item-id" >{{item?.id}}</span> <span>{{item?.title}}</span>
+          </div>
         </div>
       </div>
     </ng-container>

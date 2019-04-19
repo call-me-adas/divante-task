@@ -3,13 +3,16 @@
 .container {
   display: flex;
   flex-direction: column;
-  background-color: #FFFFFF;
+  background: #E5E5E5;
+  height: 100%;
+
   .header {
-    height: 40px;
+    height: auto;
     border-bottom: 1px solid $light-text;
-    padding: 10px;
   }
   .wrapper {
-    height: 100%;
+    flex: 1;
+    overflow-x: hidden;
   }
+
 }

@@ -7,10 +7,11 @@ import {HomePage} from '@pages/home/home.page';
     imports: [
         SharedModule,
         RouterModule.forRoot([
-            { path: '', loadChildren: './list/list.module#ListModule'},
+            { path: 'home', loadChildren: './list/list.module#ListModule'},
             { path: 'about', loadChildren: './about/about.module#AboutModule'},
             { path: 'contact', loadChildren: './contact/contact.module#ContactModule'},
             { path: 'detail/:id', loadChildren: './detail/detail.module#DetailModule'},
+            { path: '', redirectTo: 'home', pathMatch: 'full'}
         ])
     ],
     declarations: [

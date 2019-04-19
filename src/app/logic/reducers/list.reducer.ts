@@ -1,4 +1,10 @@
-import {FETCH_LIST_SUCCESS, FETCH_DETAIL} from '@logic/actions/list.action';
+import {
+  FETCH_LIST_SUCCESS,
+  FETCH_DETAIL,
+  FETCH_DETAIL_SUCCESS,
+  FETCH_LIST_FAIL,
+  FETCH_DETAIL_FAIL
+} from '@logic/actions/list.action';
 import {ItemModel} from "@logic/models/item.model";
 
 export interface State {
@@ -23,11 +29,25 @@ export function reducer(state: State = INITIAL_STATE, action) {
             };
         }
 
-        case FETCH_DETAIL: {
+        case FETCH_LIST_FAIL: {
             return {
                 ...state,
-              detail: state.list.find(x => x.id === action.payload)
+              error: action.payload
             };
+        }
+
+        case FETCH_DETAIL_SUCCESS: {
+          return {
+                ...state,
+              detail: state.list.find(x => x.id === +action.payload)
+            };
+        }
+
+        case FETCH_DETAIL_FAIL: {
+          return {
+            ...state,
+            error: action.payload
+          };
         }
 
         default: {

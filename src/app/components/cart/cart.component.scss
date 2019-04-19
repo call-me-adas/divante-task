@@ -2,26 +2,48 @@
 
 .container {
   color: $white;
-  width: 262px;
+  width: 100%;
   background-color: $light-blue;
   padding: 1em;
 
   .header {
     font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .icon {
+      margin: 0.5em;
+    }
+  }
+  .description {
+    font-family: Lato;
+    color: rgba(255, 255, 255, 0.79);
+    font-size: 13px;
+    margin-bottom: 1em;
   }
   .cart {
     border: 1px dashed #FFFFFF;
     font-size: 14px;
+    height: 150px;
+    overflow-y: auto;
 
     .cart-list {
       .cart-list-wrapper {
         background-color: $dark-blue;
+        .item-id {
+          color: $accent;
+          margin-right: 1em;
+        }
+        div {
+          padding: 0.75em;
+        }
       }
     }
     .cart-empty {
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100%;
     }
   }
 }
